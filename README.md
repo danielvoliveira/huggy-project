@@ -1,80 +1,89 @@
 
-# Setup Docker Para Projetos Laravel
-[Assine a Academy, e Seja VIP!](https://academy.especializati.com.br)
+# Desafio Página de Quem Somos | Huggy
 
-### Passo a passo
+## Introdução
+
+Primeiramente, obrigado pela oportunidade de participar deste desafio, foi muito divertido.
+
+Sobre a stack do projeto, optei por construir a infraestrutura com o Docker e utilizar o Node com o Vite para carregar os assets do projeto (scss, js, imagens e vídeos). O back-end foi construíndo com Laravel 9 e o front-end com Html, Scss, Bootstrap e Vanilla Js para buscar o melhor desempenho. Também foi criada uma base de dados em MySql para cadastrar as conversões feitas no formulário de newsletter, configurado um container específico para o Redis cache e configuradas todas as integrações com ferramentas externas.
+
+
+## Estratégia para Marketing Digital:
+
+1 - Visando o maior alcance orgânico possível, a aplicação foi configurada com as principais meta-tags para indexação em redes sociais e buscadores. Incluindo a criação do robots.txt e sitemap.xml para entregar os direcionamentos para os robôs de busca.
+
+2 - Além disso, foi acrescentado o "Schema.org" para exibir mais informações sobre a página quando encontrada em ferramentas de busca.
+
+3 - As imagens e o vídeo foram convertidos para webp e webm para ficarem mais leves. Suas tags foram configuradas com "loading="lazy" para facilitar o carregamento. Além disso, temos o atributo alt com a descrição de cada imagem para acessibilidade.
+
+4 - A responsividade do front-end está configurada para as diversas dimensões de tela.
+
+5 - Com todos esses cuidados, as chances de alcançarmos pontuação boa no rankeamento dos buscadores e aparecer nas melhores posições aumenta, trazendo mais oportunidades orgânicas para a empresa.
+
+
+## Integrações
+
+### Facebook Pixel:
+
+1 - Configuração do Facebook Pixel na aplicação (concluído)
+
+2 - Conversão no Pixel do Facebook ao clicar em "Ver vagas disponíveis" (concluído)
+
+### Google Analytics:
+
+1 - Configuração do Google Analytics na aplicação (concluído)
+
+2 - Conversão no Google Analytics ao clicar em "Ver vagas disponíveis" (não concluído por necessidade da publicação do projeto em homolog/prod para criar tag de conversão)
+
+### Huggy Chat:
+
+1 - Configuração do Huggy Chat na aplicação (concluído)
+
+2 - Evento com widget, flow e gatilho configurado ao clicar em "Falar com um especialista" (concluído)
+
+### Zapier:
+
+1 - Conversões do formulário de newslleter validadas e enviadas para endpoint (concluído)
+
+
+## Pendências:
+
+Não foi possível desenvolver as animações do bloco de time-line. Por conta do curto prazo, foi priorizado as integrações com as ferramentas solicitadas, a responsividade geral e as métricas de SEO que entram como um diferencial competitivo para atingir os objetivos de alcance do negócio.
+
+## Passo a passo para instalação
+
 Clone Repositório
 ```sh
-git clone https://github.com/especializati/setup-docker-laravel.git my-project
+git clone https://github.com/danielvoliveira/huggy-project.git huggy-project
 ```
 ```sh
-cd my-project/
+cd huggy-project/
 ```
-
-
-Alterne para a branch laravel 9.x
-```sh
-git checkout laravel-9-com-php-8
-```
-
-
-Remova o versionamento (opcional)
-```sh
-rm -rf .git/
-```
-
-
-Crie o Arquivo .env
-```sh
-cp .env.example .env
-```
-
-
-Atualize as variáveis de ambiente do arquivo .env
-```dosini
-APP_NAME="Especializa Ti"
-APP_URL=http://localhost:8989
-
-DB_CONNECTION=mysql
-DB_HOST=mysql
-DB_PORT=3306
-DB_DATABASE=nome_que_desejar_db
-DB_USERNAME=root
-DB_PASSWORD=root
-
-CACHE_DRIVER=redis
-QUEUE_CONNECTION=redis
-SESSION_DRIVER=redis
-
-REDIS_HOST=redis
-REDIS_PASSWORD=null
-REDIS_PORT=6379
-```
-
 
 Suba os containers do projeto
 ```sh
 docker-compose up -d
 ```
 
-
 Acesse o container app com o bash
 ```sh
 docker-compose exec app bash
 ```
-
 
 Instale as dependências do projeto
 ```sh
 composer install
 ```
 
-
-Gere a key do projeto Laravel
+Fora do bash, execute o comando
 ```sh
-php artisan key:generate
+npm install
 ```
 
+Em seguida, o comando
+```sh
+npm run dev
+```
 
 Acesse o projeto
 [http://localhost:8989](http://localhost:8989)
