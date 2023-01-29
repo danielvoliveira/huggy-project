@@ -52,7 +52,7 @@ Não foi possível desenvolver as animações do bloco de time-line. Por conta d
 
 ## Passo a passo para instalação
 
-Clone Repositório
+Faça o clone do repositório
 ```sh
 git clone https://github.com/danielvoliveira/huggy-project.git huggy-project
 ```
