@@ -20,12 +20,12 @@ services:
     nginx:
         image: nginx:alpine
         restart: unless-stopped
-        ports: 
+        ports:
             - "8989:80"
-        volumes: 
+        volumes:
             - ./:/var/www
             - ./docker/nginx/:/etc/nginx/conf.d/
-        networks: 
+        networks:
             - laravel-9
 
     # db mysql
