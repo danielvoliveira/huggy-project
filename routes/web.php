@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\{
+    PageController,
+    NewsletterController,
+    SitemapXmlController,
+};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +18,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PageController::class, 'index'])->name('index');
+Route::post('/newsletters/add', [NewsletterController::class, 'add'])->name('newsletters.add');
+Route::get('/sitemap.xml', [SitemapXmlController::class, 'index'])->name('sitemap');
