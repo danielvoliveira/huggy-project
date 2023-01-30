@@ -75,6 +75,11 @@ Instale as dependências do projeto
 composer install
 ```
 
+Executando migrações do projeto
+```sh
+php artisan migrate
+```
+
 Fora do bash, execute o comando
 ```sh
 npm install
